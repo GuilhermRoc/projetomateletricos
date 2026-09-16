@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site de Teste</title>
+  <title>Projeto Materiais Elétricos</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
   <div class="card">
-    
-    <h1>Nomes: </h1>
-    <p>Guilherme Oliveira</p>
-    <p>Rafael Moises de Oliveira</p>
-    <p>Giovani Marcelino dos Santos</p>
-    <p>Mateus Mariano Lack de Brito</p>
-    <p>Caua Fernando de Souza Silva</p>
-    
-    <button onclick="irParaOutraPagina()">Página2</button>
-    
+    <span class="badge">Etapa 1</span>
+    <h1>[NOME DO GRUPO]</h1>
+    <p class="subtitle">[Nome fantasia, se houver]</p>
+
+    <h2>Integrantes</h2>
+    <ul class="integrantes">
+      <li>Guilherme Oliveira</li>
+      <li>Rafael Moises de Oliveira</li>
+      <li>Giovani Marcelino dos Santos</li>
+      <li>Mateus Mariano Lack de Brito</li>
+      <li>Caua Fernando de Souza Silva</li>
+    </ul>
+
+    <nav class="nav-buttons">
+      <button onclick="window.location.href='fotos.html'">Fotos dos integrantes</button>
+      <button onclick="window.location.href='proposta.html'">Proposta do projeto</button>
+    </nav>
   </div>
-
-  <script>
-    function irParaOutraPagina() {
-      window.location.href = 'pagina2.html';
-  }
-
-
-  </script>
 </body>
 </html>
