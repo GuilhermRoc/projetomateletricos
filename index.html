@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Teste</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="card">
+    <span class="badge">Teste</span>
+    <h1>Funcionou!</h1>
+    <p>Se você está vendo isso, o deploy deu certo.</p>
+    <button onclick="incrementar()">Clique aqui</button>
+    <div id="counter">Cliques: 0</div>
+  </div>
+
+  <script>
+    let cliques = 0;
+    function incrementar() {
+      cliques++;
+      document.getElementById('counter').textContent = 'Cliques: ' + cliques;
+    }
+  </script>
+</body>
+</html>
