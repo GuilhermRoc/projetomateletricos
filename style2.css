@@ -12,3 +12,11 @@
       justify-content: center;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
+
+    h1 {
+    position: relative;
+      font-size: 2rem;
+      top: 100px;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
