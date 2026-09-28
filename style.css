@@ -24,6 +24,26 @@ body {
   max-width: 600px;
 }
 
+.card.texto {
+  max-width: 800px;
+  text-align: left;
+}
+
+.card.texto h1,
+.card.texto h2 {
+  text-align: center;
+}
+
+.card.texto p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.card.texto .nav-buttons {
+  justify-content: center;
+}
+
 .badge {
   display: inline-block;
   background: #667eea;
