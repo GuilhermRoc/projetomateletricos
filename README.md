@@ -4,7 +4,7 @@ Projeto desenvolvido para apresentação e organização de uma proposta relacio
 
 O projeto conta com uma página inicial, apresentação dos integrantes, informações sobre a proposta e recursos visuais utilizados no desenvolvimento do site.
 
-## 📋 Sobre o projeto
+## Sobre o projeto
 
 O **Projeto Matelétricos** foi desenvolvido como uma aplicação web para apresentar de forma organizada as informações do projeto, seus integrantes e sua proposta.
 
@@ -19,7 +19,7 @@ A estrutura foi criada utilizando tecnologias fundamentais do desenvolvimento we
 * Layout personalizado com CSS;
 * Navegação entre as páginas do projeto.
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 * **HTML5** — estrutura das páginas;
 * **CSS3** — estilização e layout;
