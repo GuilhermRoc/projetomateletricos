@@ -11,13 +11,13 @@
     <h1>Proposta do Projeto</h1>
     <h2>Sistema de Automação Residencial com Arduino</h2>
 
-    <p>O projeto consiste no desenvolvimento de um sistema de automação residencial de baixo custo, utilizando o microcontrolador Arduino como unidade central de processamento. O objetivo é proporcionar economia de energia e conforto automático dentro de casa.</p>
+    <p>O projeto consiste no desenvolvimento de um sistema de automação residencial de baixo custo, utilizando o microcontrolador Arduino Uno como unidade central de processamento. O objetivo é proporcionar economia de energia e conforto automático dentro de casa, acendendo a iluminação somente quando o ambiente está escuro.</p>
 
-    <p>O sistema conta com três sensores de entrada: um sensor de presença (PIR), responsável por detectar movimento no ambiente; um sensor de luminosidade (LDR), que identifica os níveis de claridade do ambiente; e um sensor de temperatura e umidade (DHT11), que monitora as condições climáticas do local.</p>
+    <p>O sistema conta com um sensor de entrada: um sensor de luminosidade (LDR), que identifica o nível de claridade do ambiente por meio de um divisor de tensão ligado a uma entrada analógica do Arduino.</p>
 
-    <p>Com base nos dados coletados, o Arduino processa as informações e aciona os dispositivos de saída por meio de um módulo relé: uma lâmpada é ligada automaticamente quando há presença e baixa luminosidade, e um cooler é acionado quando a temperatura ultrapassa um limite pré-definido. Um LED ou buzzer indica visualmente ou sonoramente o estado do sistema.</p>
+    <p>Com base nessa leitura, o Arduino processa a informação e aciona o dispositivo de saída por meio de um módulo relé: uma lâmpada é ligada automaticamente quando a luminosidade fica abaixo de um limite pré-definido e desligada quando o ambiente volta a ficar claro. O sistema utiliza dois limites de acionamento (histerese) para evitar que a lâmpada fique ligando e desligando quando a luz está próxima do valor de corte. Um LED acompanha o estado do relé e indica visualmente quando a lâmpada está ligada.</p>
 
-    <p>Essa aplicação demonstra, na prática, os conceitos de materiais condutores, semicondutores e componentes eletrônicos estudados na disciplina, aplicados a um sistema real de automação residencial.</p>
+    <p>Essa aplicação demonstra, na prática, os conceitos de materiais condutores, semicondutores e componentes eletrônicos estudados na disciplina, aplicados a um sistema real de automação residencial. Os fios e as trilhas da protoboard atuam como condutores, enquanto o LDR, o LED e os componentes do módulo relé exemplificam o uso de materiais semicondutores. Os resistores limitam a corrente do LED e formam o divisor de tensão do sensor de luminosidade.</p>
     <nav class="nav-buttons">
       <button onclick="window.location.href='/'">Voltar</button>
     </nav>
