@@ -3,39 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fotos dos integrantes</title>
+  <title>Integrantes · AutoHome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Integrantes</h1>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>AutoHome <small>Grupo Newtons</small></a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="proposta.html">Proposta</a>
+        <a href="apresentacao.html">Apresentação</a>
+        <a class="ativo" href="integrantes.html">Integrantes</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="integrantes-grid">
-      <div class="integrante">
-        <img src="fotos/guilherme.jpg" alt="Guilherme da Rocha Oliveira">
-        <p>Guilherme da Rocha Oliveira</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Grupo Newtons</span>
+        <h2>Integrantes</h2>
       </div>
-      <div class="integrante">
-        <img src="fotos/rafael.jpg" alt="Rafael Moises de Oliveira">
-        <p>Rafael Moises de Oliveira</p>
-      </div>
-      <div class="integrante">
-        <img src="fotos/giovani.jpg" alt="Giovani Marcelino dos Santos">
-        <p>Giovani Marcelino dos Santos</p>
-      </div>
-      <div class="integrante">
-        <img src="fotos/mateus.jpg" alt="Mateus Mariano Lack de Brito">
-        <p>Mateus Mariano Lack de Brito</p>
-      </div>
-      <div class="integrante">
-        <img src="fotos/caua.jpg" alt="Caua Fernando de Souza Silva">
-        <p>Caua Fernando de Souza Silva</p>
+      <div class="team">
+        <div class="member"><img src="fotos/guilherme.jpg" alt="Guilherme da Rocha Oliveira"><p>Guilherme da Rocha Oliveira</p></div>
+        <div class="member"><img src="fotos/rafael.jpg" alt="Rafael Moises de Oliveira"><p>Rafael Moises de Oliveira</p></div>
+        <div class="member"><img src="fotos/giovani.jpg" alt="Giovani Marcelino dos Santos"><p>Giovani Marcelino dos Santos</p></div>
+        <div class="member"><img src="fotos/mateus.jpg" alt="Mateus Mariano Lack de Brito"><p>Mateus Mariano Lack de Brito</p></div>
+        <div class="member"><img src="fotos/caua.jpg" alt="Caua Fernando de Souza Silva"><p>Caua Fernando de Souza Silva</p></div>
       </div>
     </div>
+  </section>
 
-    <nav class="nav-buttons">
-      <button onclick="window.location.href='/'">Voltar</button>
-    </nav>
-  </div>
+  <footer class="footer">
+    <div class="container">
+      <span>AutoHome · Grupo Newtons</span>
+      <span>Projeto acadêmico de Materiais Elétricos</span>
+    </div>
+  </footer>
 </body>
 </html>

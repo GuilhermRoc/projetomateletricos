@@ -1,84 +1,38 @@
-# Projeto Matelétricos
+# AutoHome · Luz Automática
 
-Projeto desenvolvido para apresentação e organização de uma proposta relacionada à área de instalações e soluções elétricas.
+Projeto acadêmico de **Materiais Elétricos** do grupo **Newtons**.
 
-O projeto conta com uma página inicial, apresentação dos integrantes, informações sobre a proposta e recursos visuais utilizados no desenvolvimento do site.
+Um sistema de iluminação com Arduino que acende sozinho quando escurece e apaga quando a luz natural volta. É o primeiro módulo do AutoHome, uma proposta de automação residencial de baixo custo.
 
-## Sobre o projeto
+## Como funciona
 
-O **Projeto Matelétricos** foi desenvolvido como uma aplicação web para apresentar de forma organizada as informações do projeto, seus integrantes e sua proposta.
+1. Um módulo sensor de luz (LDR) mede a claridade do ambiente.
+2. O Arduino Uno lê o sensor e confirma a leitura por 1 segundo, para evitar que a luz pisque.
+3. Quando escurece, o Arduino aciona um módulo relé e acende a lâmpada (no protótipo, um LED).
+4. Quando clareia, tudo desliga sozinho.
 
-A estrutura foi criada utilizando tecnologias fundamentais do desenvolvimento web, com páginas HTML e estilização em CSS.
+## Componentes
 
-## Funcionalidades
+| Componente | Ligação |
+|---|---|
+| Módulo sensor de luz (LDR + LM393) | DO → A0 |
+| Módulo relé 5V | IN → D6 |
+| LED + resistor 330 Ω | D9 |
+| Alimentação | 5V e GND nos trilhos do protoboard |
 
-* Página inicial do projeto;
-* Página de apresentação dos integrantes;
-* Página com a proposta do projeto;
-* Organização de imagens e materiais visuais;
-* Layout personalizado com CSS;
-* Navegação entre as páginas do projeto.
+## Site
 
-## Tecnologias utilizadas
+- `index.html`: página inicial
+- `proposta.html`: proposta completa do projeto
+- `apresentacao.html`: slides da apresentação (também em `apresentacao.pdf`)
+- `integrantes.html`: integrantes do grupo
 
-* **HTML5** — estrutura das páginas;
-* **CSS3** — estilização e layout;
-* **Git/GitHub** — versionamento e hospedagem do código.
+Feito com HTML e CSS, sem dependências. Para ver localmente, abra o `index.html` no navegador.
 
-## Estrutura do projeto
+## Integrantes
 
-```text
-projetomateletricos/
-│
-├── fotos/
-│   └── Imagens utilizadas no projeto
-│
-├── _redirects
-├── index.html
-├── integrantes.html
-├── proposta.html
-└── style.css
-```
-
-##  Acesso ao projeto
-
-O projeto está disponível publicamente no GitHub:
-
-**Repositório:**
-https://github.com/GuilhermRoc/projetomateletricos
-
-##  Como executar
-
-Por ser um projeto desenvolvido com HTML e CSS, não é necessário instalar dependências ou configurar um servidor para visualizar a aplicação localmente.
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/GuilhermRoc/projetomateletricos.git
-```
-
-### 2. Entre na pasta
-
-```bash
-cd projetomateletricos
-```
-
-### 3. Abra o projeto
-
-Abra o arquivo `index.html` em um navegador.
-
-Também é possível utilizar extensões como **Live Server** no Visual Studio Code para executar o projeto durante o desenvolvimento.
-
-##  Integrantes
-
-Projeto desenvolvido em equipe.
-
-Consulte a página [`integrantes.html`](integrantes.html) para visualizar os participantes do projeto.
-
-##  Objetivo
-
-O objetivo do projeto é aplicar conhecimentos de desenvolvimento web na criação de uma apresentação digital organizada, utilizando HTML e CSS para estruturar e estilizar as informações.
-
-##  Licença
-
-Este projeto foi desenvolvido para fins acadêmicos.
+- Guilherme da Rocha Oliveira
+- Rafael Moises de Oliveira
+- Giovani Marcelino dos Santos
+- Mateus Mariano Lack de Brito
+- Caua Fernando de Souza Silva

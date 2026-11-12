@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação · AutoHome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>AutoHome <small>Grupo Newtons</small></a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="proposta.html">Proposta</a>
+        <a class="ativo" href="apresentacao.html">Apresentação</a>
+        <a href="integrantes.html">Integrantes</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Apresentação</span>
+        <h2>Luz Automática em 7 slides</h2>
+        <p>Use as setas do teclado, os botões ou as miniaturas para navegar.</p>
+      </div>
+
+      <div class="viewer">
+        <div class="stage">
+          <img id="slide" src="slides/slide-1.jpg" alt="Slide 1 da apresentação">
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="prev" type="button">← Anterior</button>
+          <span class="counter" id="counter">1 / 7</span>
+          <button class="ctrl" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+
+      <div class="viewer-actions">
+        <a class="btn btn-green" href="apresentacao.pdf" download>Baixar PDF</a>
+        <a class="btn" style="border:1px solid var(--line)" href="apresentacao.pdf" target="_blank" rel="noopener">Abrir em tela cheia</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span>AutoHome · Grupo Newtons</span>
+      <span>Projeto acadêmico de Materiais Elétricos</span>
+    </div>
+  </footer>
+
+  <script>
+    var total = 7, atual = 1;
+    var img = document.getElementById("slide");
+    var counter = document.getElementById("counter");
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbs = document.getElementById("thumbs");
+
+    for (var i = 1; i <= total; i++) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Ir para o slide " + i);
+      b.innerHTML = '<img src="slides/slide-' + i + '.jpg" alt="">';
+      b.dataset.n = i;
+      b.addEventListener("click", function () { mostrar(+this.dataset.n); });
+      thumbs.appendChild(b);
+    }
+
+    function mostrar(n) {
+      atual = Math.min(Math.max(n, 1), total);
+      img.src = "slides/slide-" + atual + ".jpg";
+      img.alt = "Slide " + atual + " da apresentação";
+      counter.textContent = atual + " / " + total;
+      prev.disabled = atual === 1;
+      next.disabled = atual === total;
+      Array.prototype.forEach.call(thumbs.children, function (t, i) {
+        t.classList.toggle("ativo", i + 1 === atual);
+      });
+    }
+
+    prev.addEventListener("click", function () { mostrar(atual - 1); });
+    next.addEventListener("click", function () { mostrar(atual + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") mostrar(atual + 1);
+      if (e.key === "ArrowLeft") mostrar(atual - 1);
+    });
+    mostrar(1);
+  </script>
+</body>
+</html>

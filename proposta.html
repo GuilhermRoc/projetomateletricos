@@ -3,24 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposta do projeto</title>
+  <title>Proposta · AutoHome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="card">
-    <h1>Proposta do Projeto</h1>
-    <h2>Sistema de Automação Residencial com Arduino</h2>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>AutoHome <small>Grupo Newtons</small></a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a class="ativo" href="proposta.html">Proposta</a>
+        <a href="apresentacao.html">Apresentação</a>
+        <a href="integrantes.html">Integrantes</a>
+      </nav>
+    </div>
+  </header>
 
-    <p>O projeto consiste no desenvolvimento de um sistema de automação residencial de baixo custo, utilizando o microcontrolador Arduino Uno como unidade central de processamento. O objetivo é proporcionar economia de energia e conforto automático dentro de casa, acendendo a iluminação somente quando o ambiente está escuro.</p>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Proposta do projeto</span>
+      <h1>Luz Automática com Arduino</h1>
+      <p>Um sistema de iluminação que liga e desliga sozinho de acordo com a luz do ambiente. É o primeiro módulo do AutoHome, nossa proposta de automação residencial de baixo custo.</p>
+    </div>
+  </section>
 
-    <p>O sistema conta com um sensor de entrada: um sensor de luminosidade (LDR), que identifica o nível de claridade do ambiente por meio de um divisor de tensão ligado a uma entrada analógica do Arduino.</p>
+  <section class="section">
+    <div class="container">
+      <div class="article">
+        <h2>O problema</h2>
+        <p>Hoje a iluminação depende de alguém lembrar de ligar e desligar. O resultado são luzes de garagem e fachada acesas em pleno dia, áreas externas no escuro quando alguém chega, e energia gasta sem necessidade.</p>
 
-    <p>Com base nessa leitura, o Arduino processa a informação e aciona o dispositivo de saída por meio de um módulo relé: uma lâmpada é ligada automaticamente quando a luminosidade fica abaixo de um limite pré-definido e desligada quando o ambiente volta a ficar claro. O sistema utiliza dois limites de acionamento (histerese) para evitar que a lâmpada fique ligando e desligando quando a luz está próxima do valor de corte. Um LED acompanha o estado do relé e indica visualmente quando a lâmpada está ligada.</p>
+        <h2>A solução</h2>
+        <p>O projeto usa um sensor de luminosidade (LDR) para perceber quando o ambiente escurece. O Arduino Uno lê esse sensor continuamente e, quando a leitura indica escuro por pelo menos 1 segundo, aciona um módulo relé que liga a lâmpada. Quando a luz natural volta, o sistema desliga tudo sozinho.</p>
+        <p>A confirmação de 1 segundo evita que uma sombra rápida, como alguém passando na frente do sensor, faça a luz piscar. No protótipo, a lâmpada é representada por um LED, e o relé mostra o acionamento com um clique e um LED indicador.</p>
 
-    <p>Essa aplicação demonstra, na prática, os conceitos de materiais condutores, semicondutores e componentes eletrônicos estudados na disciplina, aplicados a um sistema real de automação residencial. Os fios e as trilhas da protoboard atuam como condutores, enquanto o LDR, o LED e os componentes do módulo relé exemplificam o uso de materiais semicondutores. Os resistores limitam a corrente do LED e formam o divisor de tensão do sensor de luminosidade.</p>
-    <nav class="nav-buttons">
-      <button onclick="window.location.href='/'">Voltar</button>
-    </nav>
-  </div>
+        <h2>Componentes</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Componente</th><th>Função</th><th>Ligação</th></tr></thead>
+            <tbody>
+              <tr><td>Arduino Uno</td><td>Processa a leitura e decide quando acender</td><td>USB do computador</td></tr>
+              <tr><td>Módulo sensor de luz (LDR + LM393)</td><td>Informa se está claro ou escuro</td><td>DO → <span class="pin">A0</span></td></tr>
+              <tr><td>Módulo relé 5V</td><td>Interruptor controlado pelo Arduino</td><td>IN → <span class="pin">D6</span></td></tr>
+              <tr><td>LED + resistor 330 Ω</td><td>Representa a lâmpada</td><td>→ <span class="pin">D9</span></td></tr>
+              <tr><td>Protoboard e fios</td><td>Conexões do circuito</td><td>5V e GND nos trilhos</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Materiais elétricos no projeto</h2>
+        <p>O circuito aplica na prática os conceitos estudados na disciplina:</p>
+        <ul>
+          <li><strong>LDR (semicondutor):</strong> feito de sulfeto de cádmio. Com luz, o material libera mais elétrons livres e a resistência cai; no escuro, ela sobe. É essa variação que o circuito mede.</li>
+          <li><strong>LED (junção PN):</strong> semicondutor que emite luz quando a corrente passa no sentido direto. Por isso ele tem polaridade.</li>
+          <li><strong>Resistor de 330 Ω (Lei de Ohm):</strong> limita a corrente do LED a cerca de 9 mA, pois (5 V − 2 V) ÷ 330 Ω ≈ 9 mA.</li>
+          <li><strong>Relé (eletroímã):</strong> uma bobina de fio de cobre vira ímã com 5 V e puxa um contato metálico, fechando um circuito separado. Assim, um sinal pequeno do Arduino pode controlar uma lâmpada de 127/220 V com segurança.</li>
+          <li><strong>Condutores e isolantes:</strong> os fios de cobre levam energia e sinal com baixa resistência; a capa plástica e o corpo do protoboard isolam os condutores e evitam curtos.</li>
+        </ul>
+
+        <h2>Onde usar</h2>
+        <p>Garagens e fachadas, jardins e áreas externas, corredores e escadas de prédios, vitrines de lojas, iluminação de condomínios e luz noturna de quartos. É o mesmo princípio usado na iluminação pública.</p>
+
+        <h2 id="proximos-passos">Próximos passos</h2>
+        <p>Com a mesma base de Arduino e relé, o AutoHome pode crescer em módulos:</p>
+        <ul>
+          <li><strong>Sensor de presença (PIR):</strong> a luz só acende se estiver escuro <em>e</em> alguém passar, economizando ainda mais.</li>
+          <li><strong>Sensor de temperatura (DHT11):</strong> ligar um ventilador automaticamente quando esquentar.</li>
+          <li><strong>Porta automática:</strong> abrir e fechar a porta por sensor, a ideia que deu origem ao projeto.</li>
+          <li><strong>Controle pelo celular:</strong> com uma placa Wi-Fi (ESP32), ligar, desligar e programar horários por aplicativo.</li>
+        </ul>
+
+        <div class="hero-actions" style="margin-top:32px">
+          <a class="btn btn-green" href="apresentacao.html">Ver apresentação</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span>AutoHome · Grupo Newtons</span>
+      <span>Projeto acadêmico de Materiais Elétricos</span>
+    </div>
+  </footer>
 </body>
 </html>
